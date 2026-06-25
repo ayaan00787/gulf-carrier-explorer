@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulf Carrier Network Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-glow"></div>
+        <div class="header-content">
+            <h1>Gulf Aviation <span class="accent-text">Explorer</span></h1>
+            <p class="subtitle">Analyze elite global hubs, modern fleet breakdowns, and network sizes across the Gulf region.</p>
+            
+            <div class="selector-wrapper">
+                <label for="airline-select">Select Air Carrier:</label>
+                <select id="airline-select">
+                    </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+        <section class="card summary-card">
+            <div class="card-header-flex">
+                <div class="title-group">
+                    <h2 id="airline-name">Airline Name</h2>
+                    <div class="country-wrapper">
+                        <img id="country-flag" src="" alt="Flag" class="flag-icon">
+                        <p id="airline-country" class="country-tag">Country</p>
+                    </div>
+                </div>
+                <div class="logo-container" id="logo-box">
+                    <img id="airline-logo" src="" alt="Airline Logo" class="airline-logo">
+                </div>
+            </div>
+            
+            <div class="stats-row">
+                <div class="stat-box">
+                    <span class="stat-label">Total Fleet</span>
+                    <span id="stat-total-fleet" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Destinations</span>
+                    <span id="stat-destinations" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Airbus</span>
+                    <span id="stat-airbus" class="stat-value text-airbus">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Boeing</span>
+                    <span id="stat-boeing" class="stat-value text-boeing">0</span>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h3>Hub Operations</h3>
+                <p><strong>Primary Base:</strong> <span id="hub-name">Airport</span></p>
+                <p><strong>Alliance Group:</strong> <span id="alliance-name">None</span></p>
+            </div>
+        </section>
+
+        <section class="card fleet-card">
+            <h2>Specific Fleet Inventory</h2>
+            <div id="fleet-list" class="aircraft-grid">
+                </div>
+        </section>
+
+        <section class="card map-card">
+            <h2>Operational Hub Location</h2>
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
